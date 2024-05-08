@@ -1,0 +1,110 @@
+*{
+    text-decoration: none;
+    font-family: 'Prompt', sans-serif;
+}
+body{
+    background-color: rgb(230, 235, 240);
+}
+#barra{
+    text-align: center;
+    margin:7px;
+    padding:14px;
+    list-style:none;
+    text-transform:uppercase;
+    border-radius: 10px;
+    box-shadow:0 0 5px 0 #f2f2f2;
+}
+#barra li{
+    display: inline-block;
+}
+
+
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 53px;
+    background: #5de6e6;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: .3s ease all;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    margin-left: 20px;
+    border: 2px solid rgb(49, 49, 49);
+}
+
+.button span{
+    transition: .2s ease-in-out all;
+    position: absolute;
+}
+
+.button .icono{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    z-index: 2;
+    left: 0px;
+    transition: .3s ease-in-out all;
+    opacity: 0;
+    left: -40px;
+}
+
+.button:hover span{
+    left: 20px;
+}
+
+.button svg{
+    color: rgb(227, 227, 227);
+    width: 35px;
+    height: 35px;
+}
+
+.button:hover .icono{
+    left: 170px;
+    opacity: 1;
+}
+
+.button:hover{
+    width: 220px;
+}
+
+#menub{
+    background: rgb(86, 170, 231);
+}
+
+#htmlb{
+    background: #e44f26;
+}
+
+#cssb{
+    background: #1673b6;
+}
+
+#jsb{
+    color: rgb(25, 25, 25);
+    background: #f8de1a;
+}
+
+#pyb{
+    background: rgb(48,107,156);
+    color:#f8de1a;
+}
+
+#cb {
+    background: #004283;
+}
+
+#jsb svg{
+    color: rgb(25, 25, 25);
+}
+
+#pyb svg{
+    color:#f8de1a;
+}

@@ -6,6 +6,8 @@
     <title>Document</title>
 </head>
 <body>
+    <a href="index.php" class="button" id="menub"><span>Volver</span></a>
+
     <h1>Hola mundo!</h1>
     <?php
     #comentario

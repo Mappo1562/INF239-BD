@@ -4,3 +4,4 @@ guia uso xammp
 - en xammp panel de control start apache, esto abre el servidor de la pagina
 - en el navegador se busca http://localhost/INF239-BD/Tarea2/ y tariamos con la wea abierta
 - lo logre :p
+- mostrandole al david :3sexo

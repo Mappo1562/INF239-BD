@@ -3,8 +3,4 @@ guia uso xammp
 - cambiar donde esta guardada esta carpeta (INF239-BD) a C:\xampp\htdocs 
 - en xammp panel de control start apache, esto abre el servidor de la pagina
 - en el navegador se busca http://localhost/INF239-BD/Tarea2/ y tariamos con la wea abierta
-- links de interes:
-    http://localhost/INF239-BD/Tarea2/
-    http://localhost/phpmyadmin/
-
-fechas = año/mes/dia
+- lo logre :p

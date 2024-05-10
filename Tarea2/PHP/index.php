@@ -7,7 +7,15 @@
     <link rel="stylesheet" href="../css/barra.css" type="text/css" media="all">
 </head>
 <body>
-<ul id="barra">
+    <?php
+        $servidor="localhost";
+        $usuario="root";
+        $clave="";
+        $baseDeDatos="Tarea_2";
+
+        $enlace= mysqli_connect($servidor,$usuario,$clave,$baseDeDatos);
+    ?>
+    <ul id="barra">
         <div class="contenedor-botones">
             <li><a href="index.php" class="button" id="menub">
                 <div class="icono">
@@ -33,5 +41,29 @@
             </svg></div><span>Hola.php</span></a></li>
         </div>
     </ul>
+
+    <form action="#" name="Tarea_2" method="post">
+        <input type="number" name="rut" placeholder="rut">
+        <input type="number" name="numero_habitacion" placeholder="numero habitacion">
+        <input type="date" name="chek_in" placeholder="chek in">
+        <input type="date" name="chek_out" placeholder="chek out">
+
+        <input type="submit" name="aceptar" placeholder="aceptar">
+
+    <?php
+        if(isset($_POST["aceptar"])){
+            $rut_huesped=$_POST["rut"];
+            $numero_habitacion=$_POST["numero_habitacion"];
+            $f1=$_POST["chek_in"];
+            $f_chek_in = date("d/m/Y", strtotime($f1));
+            $f2=$_POST["chek_out"];
+            $f_chek_out = date("d/m/Y", strtotime($f2));
+
+            $insert = "INSERT INTO reserva VALUES ('','$rut_huesped','$numero_habitacion','$f1','$f2','')";
+
+            $ejecuteInsert = mysqli_query($enlace,$insert);
+        }
+    ?>
+
 </body>
 </html>

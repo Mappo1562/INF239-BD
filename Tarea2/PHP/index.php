@@ -55,9 +55,7 @@
             $rut_huesped=$_POST["rut"];
             $numero_habitacion=$_POST["numero_habitacion"];
             $f1=$_POST["chek_in"];
-            $f_chek_in = date("d/m/Y", strtotime($f1));
             $f2=$_POST["chek_out"];
-            $f_chek_out = date("d/m/Y", strtotime($f2));
 
             $insert = "INSERT INTO reserva VALUES ('','$rut_huesped','$numero_habitacion','$f1','$f2','')";
 

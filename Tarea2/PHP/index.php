@@ -62,6 +62,5 @@
             $ejecuteInsert = mysqli_query($enlace,$insert);
         }
     ?>
-
 </body>
 </html>

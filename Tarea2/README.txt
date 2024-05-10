@@ -4,7 +4,10 @@ guia uso xammp
 - en xammp panel de control start apache, esto abre el servidor de la pagina
 - en el navegador se busca http://localhost/INF239-BD/Tarea2/ y tariamos con la wea abierta
 - links de interes:
-    http://localhost/INF239-BD/Tarea2/
-    http://localhost/phpmyadmin/
+    http://localhost/INF239-BD/Tarea2/  -- pagina
+    http://localhost/phpmyadmin/        -- admin base de datos
 
 fechas = año/mes/dia
+no cacho como funciona la wea de las bases de datos, pero creo q servira copiar lo que esta en
+la carpeta BD y pegarlo en ** C:\xampp\mysql\data\tarea_2 ** si no existe la carpeta 2 hay que
+crearla

@@ -23,3 +23,20 @@ INSERT INTO habitacion (tipo, precio) VALUES('king','80000');
 INSERT INTO tour (precio_tour,fecha,lugar,medio_transporte) VALUES('500','2024/06/01','Demacia','Carreta');
 INSERT INTO tour (precio_tour,fecha,lugar,medio_transporte) VALUES('2000','2024/05/24','Dust_II','Autobus de acercamiento');
 INSERT INTO tour (precio_tour,fecha,lugar,medio_transporte) VALUES('4200','2024/05/11','Namek','Barco');
+
+
+- tenemos que incluir 
+    procedimiento almacenado
+    function
+    view
+    trigger
+
+objetivos:
+1-. crear barra de busqueda de habitaciones y identificar si actualmente esta disponible o no
+2-. modificar y eliminar reserva
+
+3-. reservar un tour o cancelarlo (relacion reserva - tour)
+4-. mostrar todos los tours disponibles con fecha, lugar, medio de transporte e imagen
+
+5-. calcular total a pagar(con la fecha de chek_out real)
+6-. visualizar calificaciones promedio por habitacion

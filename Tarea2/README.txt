@@ -11,3 +11,11 @@ fechas = año/mes/dia
 no cacho como funciona la wea de las bases de datos, pero creo q servira copiar lo que esta en
 la carpeta BD y pegarlo en ** C:\xampp\mysql\data\tarea_2 ** si no existe la carpeta 2 hay que
 crearla
+
+
+-- ingresar habitaciones:
+INSERT INTO habitacion (tipo, precio) VALUES('single','10000');
+INSERT INTO habitacion (tipo, precio) VALUES('double','20000');
+INSERT INTO habitacion (tipo, precio) VALUES('king','80000');
+
+

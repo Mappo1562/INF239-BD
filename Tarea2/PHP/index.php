@@ -12,7 +12,6 @@
         $usuario="root";
         $clave="";
         $baseDeDatos="Tarea_2";
-
         $enlace= mysqli_connect($servidor,$usuario,$clave,$baseDeDatos);
     ?>
     <ul id="barra">
@@ -58,6 +57,7 @@
             $f2=$_POST["chek_out"];
 
             $insert = "INSERT INTO reserva VALUES ('','$rut_huesped','$numero_habitacion','$f1','$f2','')";
+            #$insert = "INSERT INTO **nombre tabla** VALUES (**valores de la tabla separados por , los vacios van '')";
 
             $ejecuteInsert = mysqli_query($enlace,$insert);
         }

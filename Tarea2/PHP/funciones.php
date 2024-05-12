@@ -9,7 +9,6 @@
     }
 
     function consultar($enlace){
-        $enlace=init();
         $dia = date("d");
         $mes = date("m");
         $anio = date("20y");
@@ -123,5 +122,26 @@
             } 
         }
 
+    }
+
+    function ver_tours($enlace){
+        $consulta="SELECT * FROM tour";
+        $resultado=mysqli_query($enlace,$consulta);
+        if ($resultado){
+            while($fila = mysqli_fetch_array($resultado)){
+                $lugar=$fila['lugar'];
+                $transporte=$fila['medio_transporte'];
+                $fecha=$fila['fecha'];
+                $precio=$fila['precio_tour'];
+                echo'<div class="tour"><h2 class="title">'.$lugar.'</h2><div class="valores">';
+                if ($lugar=="Demacia")
+                    echo '<img src="../static/Demacia.png" class="img-normalizada">';
+                if ($lugar=="Dust_II")
+                    echo '<img src="../static/Dust_II.png" class="img-normalizada">';
+                if ($lugar=="Namek")
+                    echo '<img src="../static/Namek.png" class="img-normalizada">';
+                echo '<p class="info">fecha: '.$fecha.'<br><br>medio de transporte: '.$transporte.'<br><br>precio: '.$precio.'</p></div></div>';
+            }
+        }
     }
 ?>

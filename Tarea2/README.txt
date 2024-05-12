@@ -36,7 +36,7 @@ objetivos:
 2-. --- modificar y eliminar reserva, crear calificacion ---                                          listo
 
 3-. reservar un tour o cancelarlo (relacion reserva - tour)
-4-. mostrar todos los tours disponibles con fecha, lugar, medio de transporte e imagen
+4-. --- mostrar todos los tours disponibles con fecha, lugar, medio de transporte e imagen ---        listo
 
 5-. calcular total a pagar(con la fecha de chek_out real)
 6-. visualizar calificaciones promedio por habitacion

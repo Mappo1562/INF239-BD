@@ -1,10 +1,5 @@
 <?php
-
-    $servidor="localhost";
-    $usuario="root";
-    $clave="";
-    $baseDeDatos="Tarea_2";
-    $enlace= mysqli_connect($servidor,$usuario,$clave,$baseDeDatos);
+    include "funciones.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +10,6 @@
     <link rel="stylesheet" href="../css/bar.css" type="text/css" media="all">
     <style>
 .formulario{
-background-color: ;
 position: absolute;
 top: 50%;
 left: 50%;

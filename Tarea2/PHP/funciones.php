@@ -121,7 +121,6 @@
                 echo "<div class='respuesta'><h3>Error al eliminar la reserva.</h3></div>";
             } 
         }
-
     }
 
     function ver_tours($enlace){
@@ -140,8 +139,46 @@
                     echo '<img src="../static/Dust_II.png" class="img-normalizada">';
                 if ($lugar=="Namek")
                     echo '<img src="../static/Namek.png" class="img-normalizada">';
-                echo '<p class="info">fecha: '.$fecha.'<br><br>medio de transporte: '.$transporte.'<br><br>precio: '.$precio.'</p></div></div>';
+                echo '<p class="info">opcion: '.$fila["ID_tour"].'<br><br>fecha: '.$fecha.'<br><br>medio de transporte: '.$transporte.'<br><br>precio: '.$precio.'</p></div></div>';
             }
+        }
+    }
+
+    function reservar_tour($enlace){
+        if(isset($_POST["reservar"])){
+            $f1=$_POST["numero_reserva"];
+            $f2=$_POST["opcion"];
+            $consulta="SELECT precio_tour FROM tour WHERE ID_tour = '$f2'";
+            $resultado=mysqli_query($enlace,$consulta);
+            if ($resultado){
+                while ($fila = mysqli_fetch_array($resultado)){
+                    $precio=$fila['precio_tour'];
+                }
+            }
+
+            $insert = "INSERT INTO reserva_tour VALUES ('$f1','$f2','$precio')";
+            #$insert = "INSERT INTO **nombre tabla** VALUES (**valores de la tabla separados por , los vacios van '')";
+
+            if(mysqli_query($enlace,$insert)){
+                echo"<div class='respuesta'><h3><br>Reservado exitosamente.</h3></div>";
+            }
+            else {
+                echo "<div class='respuesta'><h3><br>Error al reservar</h3></div>";
+            }
+        }
+    }
+
+    function eliminar_tour($enlace){
+        if(isset($_POST["eliminar"])){
+            $f1=$_POST["numero_reserva"];
+            $f2=$_POST["opcion"];
+            $sql = "DELETE FROM reserva_tour WHERE (ID_reserva = $f1 AND ID_tour = $f2)";
+            if(mysqli_query($enlace, $sql)){
+                echo "<div class='respuesta'><h3>reserva eliminada exitosamente.</h3></div>";
+            } 
+            else {
+                echo "<div class='respuesta'><h3>Error al eliminar la reserva.</h3></div>";
+            } 
         }
     }
 ?>

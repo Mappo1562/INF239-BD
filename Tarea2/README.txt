@@ -26,16 +26,17 @@ INSERT INTO tour (precio_tour,fecha,lugar,medio_transporte) VALUES('4200','2024/
 
 
 - tenemos que incluir 
-    procedimiento almacenado
-    function
-    view
-    trigger
+    procedimiento almacenado - creo q esta
+    function - hay varias
+    view - creo q si
+    trigger - creo q si
+
 
 objetivos:
 1-. --- crear barra de busqueda de habitaciones y identificar si actualmente esta disponible o no --- listo
 2-. --- modificar y eliminar reserva, crear calificacion ---                                          listo
 
-3-. reservar un tour o cancelarlo (relacion reserva - tour)
+3-. --- reservar un tour o cancelarlo (relacion reserva - tour) ---                                   listo
 4-. --- mostrar todos los tours disponibles con fecha, lugar, medio de transporte e imagen ---        listo
 
 5-. calcular total a pagar(con la fecha de chek_out real)

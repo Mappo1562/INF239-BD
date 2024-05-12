@@ -9,47 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reservas</title>
     <link rel="stylesheet" href="../css/bar.css" type="text/css" media="all">
-    <style>
-
-.respuesta{
-    margin: 30px; 
-}
-
-.formulario{
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-background-color: #e4b17d;
-padding: 90px 50px;
-border-radius: 5px;
-text-align: center;
-border: 1px solid rgb(49, 49, 49);
-}
-
-.f{
-    width: 400px;
-}
-
-input {
-	width: calc(100% - 20px);
-	padding: 9px;
-	margin: auto;
-	margin-top: 12px;
-	font-size: 16px;
-    border: none;
-}
-
-input[type='submit']{
-	background-color: #e06f72;
-
-	width: calc(80% - 20px);
-	margin: 0 10%;
-	margin-top: 22px;
-    border: 1px solid rgb(49, 49, 49);
-    cursor: pointer;
-}
-    </style>
+    <link rel="stylesheet" href="../css/style.css" type="text/css" media="all">
 </head>
 <body>
     <ul id="barra">

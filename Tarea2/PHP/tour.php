@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tour</title>
     <link rel="stylesheet" href="../css/bar.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../css/style.css" type="text/css" media="all">
     <style>
         .contenedor{
             background-color: #e4b17d;
@@ -40,6 +41,13 @@
         .info{
             margin-left: 25px;
             font-size: 25px;
+        }
+
+        .f{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%
         }
     </style>
 </head>
@@ -75,6 +83,30 @@
             <input type="submit" name="cancelar_reserva_tour" placeholder="cancelar reserva" value="cancelar reserva">
         </form>
     </div>
+    <?php
+        if(isset($_GET["reservar_tour"])){
+            echo"
+            <div class='formulario'>
+                <form action='#' name='Tarea_2' method='post'>
+                    <input type='number' name='numero_reserva' placeholder='numero de reserva' class='dato'><br>
+                    <input type='number' name='opcion' placeholder='opcion de tour' class='dato'><br>
+                    <input type='submit' name='reservar' placeholder='reservar' value='reservar'>
+                </form>
+            </div>";
+            reservar_tour($enlace);
+        }
+        if(isset($_GET["cancelar_reserva_tour"])){
+            echo"
+            <div class='formulario'>
+                <form action='#' name='Tarea_2' method='post'>
+                    <input type='number' name='numero_reserva' placeholder='numero de reserva' class='dato'><br>
+                    <input type='number' name='opcion' placeholder='opcion de tour' class='dato'><br>
+                    <input type='submit' name='eliminar' placeholder='eliminar' value='eliminar'>
+                </form>
+            </div>";
+            eliminar_tour($enlace);
+        }
+    ?>
 
     <div class="contenedor">
 

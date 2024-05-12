@@ -66,28 +66,6 @@ input[type='submit']{
         </div>
     </ul>
 
-    <div class="formulario">
-        <form action="#" name="Tarea_2" method="post">
-            <input type="number" name="rut" placeholder="rut" class="dato"><br>
-            <input type="number" name="numero_habitacion" placeholder="numero habitacion" class="dato"><br>
-            <input type="date" name="chek_in" placeholder="chek in" class="dato"><br>
-            <input type="date" name="chek_out" placeholder="chek out" class="dato"><br>
-
-            <input type="submit" name="aceptar" placeholder="aceptar">
-        </form>
-    </div>
-    <?php
-        if(isset($_POST["aceptar"])){
-            $rut_huesped=$_POST["rut"];
-            $numero_habitacion=$_POST["numero_habitacion"];
-            $f1=$_POST["chek_in"];
-            $f2=$_POST["chek_out"];
-
-            $insert = "INSERT INTO reserva VALUES ('','$rut_huesped','$numero_habitacion','$f1','$f2','')";
-            #$insert = "INSERT INTO **nombre tabla** VALUES (**valores de la tabla separados por , los vacios van '')";
-
-            $ejecuteInsert = mysqli_query($enlace,$insert);
-        }
-    ?>
+    <h1>HOLA MUNDO!!!!!!!!!!!!</h1>
 </body>
 </html>

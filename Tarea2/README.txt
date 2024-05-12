@@ -32,8 +32,8 @@ INSERT INTO tour (precio_tour,fecha,lugar,medio_transporte) VALUES('4200','2024/
     trigger
 
 objetivos:
-1-. crear barra de busqueda de habitaciones y identificar si actualmente esta disponible o no
-2-. modificar y eliminar reserva
+1-. --- crear barra de busqueda de habitaciones y identificar si actualmente esta disponible o no --- listo
+2-. --- modificar y eliminar reserva, crear calificacion ---                                          listo
 
 3-. reservar un tour o cancelarlo (relacion reserva - tour)
 4-. mostrar todos los tours disponibles con fecha, lugar, medio de transporte e imagen

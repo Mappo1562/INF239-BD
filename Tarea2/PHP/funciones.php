@@ -8,7 +8,7 @@
     return $enlace;
     }
 
-    function consultar(){
+    function consultar($enlace){
         $enlace=init();
         $dia = date("d");
         $mes = date("m");
@@ -45,8 +45,7 @@
         }
     }
 
-    function crear(){
-        $enlace=init();
+    function crear($enlace){
         if(isset($_POST["aceptar"])){
             $rut_huesped=$_POST["rut"];
             $numero_habitacion=$_POST["numero_habitacion"];
@@ -64,5 +63,65 @@
                 echo "<div class='respuesta'><h3><br>Error al agregar el registro</h3></div>";
             }
         }
+    }
+
+    function buscar($id,$enlace){
+        if(isset($_POST["buscar"])){
+            $consulta="SELECT rut_huesped, numero_habitacion, f_chek_in, f_chek_out FROM reserva WHERE ID_Reserva = '$id'";
+            $resultado=mysqli_query($enlace,$consulta);
+            if(mysqli_num_rows($resultado) > 0){
+                return true;
+            }
+            else {
+                echo "<div class='respuesta'><h3><br>No se encontró ningún registro con el ID proporcionado.</h3></div>";
+                return false;
+            }
+        }
+    }
+    function modificar($id,$enlace){
+        if(isset($_POST["modificar_registro"])){
+            $rut_huesped = $_POST["rut"];
+            $numero_habitacion = $_POST["numero_habitacion"];
+            $check_in = $_POST["chek_in"];
+            $check_out = $_POST["chek_out"];
+            $calificacion = $_POST["calificacion"];
+            $actualizar = "UPDATE reserva SET rut_huesped='$rut_huesped', numero_habitacion='$numero_habitacion', f_chek_in='$check_in', f_chek_out='$check_out', calificacion='$calificacion' WHERE ID_Reserva='$id'";
+            if(mysqli_query($enlace, $actualizar)){
+                echo "<div class='respuesta'><h3>Registro modificado exitosamente.</h3></div>";
+            } 
+            else {
+                echo "<div class='respuesta'><h3>Error al modificar el registro.</h3></div>";
+            }
+        }
+    }
+
+
+    function calificar($enlace){
+        if(isset($_POST["calificar"])){
+            $id = $_POST["id_a_modificar"];
+            $calificacion = $_POST["calificacion"];
+            $actualizar = "UPDATE reserva SET calificacion='$calificacion' WHERE ID_Reserva='$id'";
+            if(mysqli_query($enlace, $actualizar)){
+                echo "<div class='respuesta'><h3>calificacion ingresada exitosamente.</h3></div>";
+            } 
+            else {
+                echo "<div class='respuesta'><h3>Error al ingresar calificacion.</h3></div>";
+            } 
+        }
+
+    }
+
+    function eliminar($enlace){
+        if(isset($_POST["borrar"])){
+            $id = $_POST["id_a_borrar"];
+            $sql = "DELETE FROM reserva WHERE ID_Reserva = $id";
+            if(mysqli_query($enlace, $sql)){
+                echo "<div class='respuesta'><h3>reserva eliminada exitosamente.</h3></div>";
+            } 
+            else {
+                echo "<div class='respuesta'><h3>Error al eliminar la reserva.</h3></div>";
+            } 
+        }
+
     }
 ?>

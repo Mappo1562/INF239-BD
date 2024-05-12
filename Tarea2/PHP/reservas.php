@@ -84,6 +84,7 @@ input[type='submit']{
             <input type="submit" name="crear" placeholder="crear" value="crear reserva">
             <input type="submit" name="modificar" placeholder="modificar" value="modificar reserva">
             <input type="submit" name="eliminar" placeholder="eliminar" value="eliminar reserva">
+            <input type="submit" name="agregar_calificacion" placeholder="agregar_calificacion" value="agregar calificacion">
         </form>
     </div>
 
@@ -98,7 +99,7 @@ input[type='submit']{
                     <input type='submit' name='buscar' placeholder='buscar' value='buscar'>
                 </form>
             </div>";
-            consultar();
+            consultar($enlace);
         }
 
 
@@ -114,67 +115,55 @@ input[type='submit']{
                     <input type='submit' name='aceptar' placeholder='aceptar'>
                 </form>
             </div>";
-            crear();
+            crear($enlace);
         }
         
-
 
         if(isset($_GET["modificar"])){
             echo"
             <div class='formulario'>
                 <form action='#' name='Tarea_2' method='post'>
-                    <input type='number' name='id' placeholder='id' class='dato'><br>
-                    <input type='submit' name='buscar' placeholder='buscar' value='buscar'>
+                    <input type='number' name='id_a_modificar' placeholder='id_a_modificar' class='dato'><br>
+                    <input type='number' name='rut' placeholder='rut' class='dato'><br>
+                    <input type='number' name='numero_habitacion' placeholder='numero habitacion' class='dato'><br>
+                    <input type='date' name='chek_in' placeholder='chek in' class='dato'><br>
+                    <input type='date' name='chek_out' placeholder='chek out' class='dato'><br>
+                    <input type='numer' name='calificaion' placeholder='calificacion' class='dato'><br>
+                    <input type='submit' name='modificar_registro' value='Modificar'>
                 </form>
             </div>";
-            if(isset($_POST["buscar"])){
-                $id=$_POST["id"];
-                print($id);
-                $consulta="SELECT rut_huesped, numero_habitacion, f_chek_in, f_chek_out FROM reserva WHERE ID_Reserva = '$id'";
-                $resultado=mysqli_query($enlace,$consulta);
-        
-                // Verificar si se encontró el registro
-                if(mysqli_num_rows($resultado) > 0){
-
-                    // Mostrar el formulario de edición con los datos del registro
-                    echo "
-                    <div class='formulario'>
-                    <form action='#' name='Tarea_2' method='post'>
-                        <input type='number' name='rut' placeholder='rut' class='dato'><br>
-                        <input type='number' name='numero_habitacion' placeholder='numero habitacion' class='dato'><br>
-                        <input type='date' name='chek_in' placeholder='chek in' class='dato'><br>
-                        <input type='date' name='chek_out' placeholder='chek out' class='dato'><br>
-            
-                        <input type='submit' name='modificar_registro' value='Modificar'>
-                    </form>
-                    </div>";
-                
-                    if(isset($_POST["modificar_registro"])){
-                        print($id);
-                        $rut_huesped = $_POST["rut"];
-                        $numero_habitacion = $_POST["numero_habitacion"];
-                        $check_in = $_POST["chek_in"];
-                        $check_out = $_POST["chek_out"];
-                    
-                    
-                        // Consulta SQL para actualizar el registro
-                        $actualizar = "UPDATE reserva SET rut_huesped='$rut_huesped', numero_habitacion='$numero_habitacion', f_chek_in='$check_in', f_chek_out='$check_out' WHERE ID_Reserva='$id'";
-                    
-                        if(mysqli_query($enlace, $actualizar)){
-                            echo "<div class='respuesta'><h3>Registro modificado exitosamente.</h3></div>";
-                        } 
-                        else {
-                            echo "<div class='respuesta'><h3>Error al modificar el registro.</h3></div>";
-                        }
-                    }
-                    else{print(":(");}
-                }
-                else {
-                    echo "No se encontró ningún registro con el ID proporcionado.";
+            if(isset($_POST["modificar_registro"])){
+                $id = $_POST["id_a_modificar"];
+                if (buscar($id,$enlace)){
+                    modificar($id,$enlace);
                 }
             }
-        
         }
+
+        if(isset($_GET["agregar_calificacion"])){
+            echo"
+            <div class='formulario'>
+                <form action='#' name='Tarea_2' method='post'>
+                    <input type='number' name='id_a_modificar' placeholder='reserva calificadora' class='dato'><br>
+                    <input type='numer' name='calificacion' placeholder='calificacion' class='dato'><br>
+                    <input type='submit' name='calificar' value='Calificar'>
+                </form>
+            </div>";
+            calificar($enlace);
+        } 
+
+        if(isset($_GET["eliminar"])){
+            echo"
+            <div class='formulario'>
+                <form action='#' name='Tarea_2' method='post'>
+                    <input type='number' name='id_a_borrar' placeholder='reserva a borrar' class='dato'><br>
+                    <input type='submit' name='borrar' value='borrar'>
+                </form>
+            </div>";
+            eliminar($enlace);
+        } 
     ?>
 </body>
 </html>
+
+

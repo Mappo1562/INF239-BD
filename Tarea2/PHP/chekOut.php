@@ -1,3 +1,7 @@
+<?php
+    include "funciones.php";
+    $enlace=init();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +12,7 @@
 </head>
 <body>
     <ul id="barra">
+
         <div class="contenedor-botones">
             <li><a href="index.php" class="button">
                 <div class="icono">
@@ -30,5 +35,38 @@
             </svg></div><span>calificaciones</span></a></li>
         </div>
     </ul>
+    
+    <div class='formulario'>
+
+                <form action='#' name='Tarea_2' method='post'>
+                <p>Ingrese su fecha de salida y Id de reserva</p>
+                <input type='date' name='chek_out' placeholder='chek out' class='dato'><br>
+                <input type='number' name='Id' placeholder='Id reserva' class='dato'><br>
+                <input type='submit' name='Calcular' placeholder='Calcular' value='Calcular'>
+                    
+                </form>
+    </div>
+    <?php
+    // Fechas de ejemplo
+    $fechaInicio = '2024-04-15';
+    $fechaFin = '2024-05-13';
+
+    // Convierte las fechas en objetos DateTime
+    $fechaInicioObj = new DateTime($fechaInicio);
+    $fechaFinObj = new DateTime($fechaFin);
+
+    // Calcula la diferencia entre las fechas
+    $diferencia = $fechaInicioObj->diff($fechaFinObj);
+
+    // Obtiene la diferencia en días
+    $diasDiferencia = $diferencia->days;
+
+    // Imprime el resultado dentro de un párrafo HTML
+    echo "<p>La diferencia entre $fechaInicio y $fechaFin es de $diasDiferencia días.</p>";
+    if(isset($_GET["Calcular"])){
+        diff_dias($enlace);
+
+    }
+    ?>
 </body>
 </html>

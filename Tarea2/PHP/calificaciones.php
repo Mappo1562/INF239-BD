@@ -1,10 +1,55 @@
+<?php
+    include "funciones.php";
+    $enlace = init();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calificaciones</title>
+    <title>calificaciones</title>
     <link rel="stylesheet" href="../css/bar.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../css/style.css" type="text/css" media="all">
+    <style>
+        .contenedor{
+            background-color: #e4b17d;
+            padding: 0px 50px 50px 50px;
+            margin: 50px 100px;
+            border-radius: 20px;
+            border: 2px dotted;
+        }
+
+        .img-normalizada{
+            width: 50%;
+            height: 50%;
+            object-fit: cover;
+        }
+
+        .title{
+            margin-left: 20%;
+        }
+
+        .tour{
+            padding-top: 60px;
+        }
+
+        .valores{
+            display: flex;
+            align-items: center;
+        }
+
+        .info{
+            margin-left: 25px;
+            font-size: 25px;
+        }
+
+        .f{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%
+        }
+    </style>
 </head>
 <body>
     <ul id="barra">
@@ -30,5 +75,11 @@
             </svg></div><span>calificaciones</span></a></li>
         </div>
     </ul>
+    <div class="contenedor">
+
+<?php
+    calcular_promedio($enlace)
+?>
+</div>
 </body>
 </html>

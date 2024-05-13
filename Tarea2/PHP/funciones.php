@@ -44,6 +44,34 @@
         }
     }
 
+    function diff_dias($enlace){
+        if(isset($_POST["Calcular"])){
+            $id_habitacion = $_POST('Id');
+            $consulta = "SELECT * FROM reserva WHERE (ID_reserva = $id_habitacion)";
+            $fecha_salida = $_POST('chek_out');
+            
+            $resultado=mysqli_query($enlace,$consulta);
+            /*
+            if ($resultado){
+                while ($fila = mysqli_fetch_array($resultado)){
+                    $fecha_inicio = $fila['f_chek_in']
+                    // Convierte las fechas en objetos DateTime
+                    $fecha_inicio_date= new DateTime($fecha_inicio);
+                    $fecha_salida_date = new DateTime($fecha_salida);
+
+                    // Calcula la diferencia entre las fechas
+                    $cant_dias = $fecha_inicio_date->diff($fecha_salida_date);
+
+                    // Obtiene la diferencia en días
+                    $diasDiferencia = $cant_dias->days;
+                    if(mysqli_query($enlace, $sql)){
+                        echo "<p>La diferencia entre $fecha_inicio y $fecha_salida es de $diasDiferencia días.</p>";
+                    }
+                }
+            }*/
+        }
+    }
+
     function crear($enlace){
         if(isset($_POST["aceptar"])){
             $rut_huesped=$_POST["rut"];
@@ -181,4 +209,45 @@
             } 
         }
     }
+
+    function calcular_promedio($enlace){
+        $consulta_reserva="SELECT * FROM reserva";
+        $resultado_reserva=mysqli_query($enlace,$consulta_reserva);
+        $consulta_habitaciones="SELECT * FROM habitacion";
+        $resultado_habitaciones=mysqli_query($enlace, $consulta_habitaciones);
+        if ($resultado_reserva){
+            $suma_calificaciones = [0,0,0];
+            $cant_calificaciones = [0,0,0];
+            while($fila = mysqli_fetch_array($resultado_reserva)){
+                $ID_reserva=$fila['ID_Reserva'];
+                $numero_habitacion=$fila['numero_habitacion'];
+                $calificacion=$fila['calificacion'];
+                $suma_calificaciones[$numero_habitacion-1] = $calificacion + $suma_calificaciones[$numero_habitacion-1] ;
+                $cant_calificaciones[$numero_habitacion-1] = 1 + $cant_calificaciones[$numero_habitacion-1];
+            }
+            $cont = 0;
+            while($fila = mysqli_fetch_array($resultado_habitaciones)){
+                $numero_habitacion=$fila['numero_habitacion'];
+                $tipo=$fila['tipo'];
+                if ($cant_calificaciones[$cont] == 0){
+                    $promedio = 0;
+                }else{
+                    $promedio = $suma_calificaciones[$cont]/$cant_calificaciones[$cont];
+                }
+                
+                echo'<div class="tour"><h2 class="title">Habitacion numero: '.$numero_habitacion.'</h2><div class="valores">';
+                if ($numero_habitacion=="1")
+                    echo '<img src="../static/habitacion_fea.png" class="img-normalizada">';
+                if ($numero_habitacion=="2")
+                    echo '<img src="../static/habitacion_2.png" class="img-normalizada">';
+                if ($numero_habitacion=="3")
+                    echo '<img src="../static/habitacion_bonita.png" class="img-normalizada">';
+                echo '<p class="info">tipo: '.$tipo.' <br><br>Promedio calificacion: '.$promedio.'</p></div></div>';
+                $cont = 1 + $cont;
+            }
+
+            
+        }
+    }
+
 ?>

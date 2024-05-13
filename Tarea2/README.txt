@@ -12,6 +12,8 @@ no cacho como funciona la wea de las bases de datos, pero creo q servira copiar 
 la carpeta BD y pegarlo en ** C:\xampp\mysql\data\tarea_2 ** si no existe la carpeta 2 hay que
 crearla
 
+para cambiar la base de datos: cambiar los 5 archivos que empiezan con "ib" 
+
 
 -- ingresar habitaciones:
 INSERT INTO habitacion (tipo, precio) VALUES('single','10000');

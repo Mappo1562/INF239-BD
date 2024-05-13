@@ -44,14 +44,57 @@
         }
     }
 
-    function diff_dias($enlace){
+    function calculo_check_out($enlace){
         if(isset($_POST["Calcular"])){
-            $id_habitacion = $_POST('Id');
+            $id_habitacion = $_POST['Id'];
             $consulta = "SELECT * FROM reserva WHERE (ID_reserva = $id_habitacion)";
-            $fecha_salida = $_POST('chek_out');
-            
             $resultado=mysqli_query($enlace,$consulta);
-            /*
+            $fila_reserva = mysqli_fetch_array($resultado);
+            $fecha_salida = $_POST['chek_out'];
+            $fecha_inicio = $fila_reserva['f_chek_in'];
+            
+            $timestamp_inicio = strtotime($fecha_inicio);
+            $timestamp_fin = strtotime($fecha_salida);
+            
+            // Calcular la diferencia en segundos
+            $diferencia_segundos = $timestamp_fin - $timestamp_inicio;
+        
+            // Convertir la diferencia de segundos a días (1 día = 86400 segundos)
+            $diferencia_dias = $diferencia_segundos / (60 * 60 * 24);
+            
+            // Redondear el resultado si es necesario
+            $diferencia_dias = round($diferencia_dias);
+            echo"<div class='respuesta'><h3><br>La diferencia de dias es: ".$diferencia_dias."</h3></div>";
+
+            $num_habitacion = $fila_reserva['numero_habitacion'];
+
+            $consulta_habitaciones="SELECT * FROM habitacion WHERE (numero_habitacion = $num_habitacion)";
+            $resultado_habitaciones=mysqli_query($enlace, $consulta_habitaciones);
+            $fila_habitaciones = mysqli_fetch_array($resultado_habitaciones);
+            $precio_habitacion = $fila_habitaciones["precio"];
+            $pago_habitaciones = $diferencia_dias * $precio_habitacion;
+            echo"<div class='respuesta'><h3><br>Precio por los dias: ".$pago_habitaciones."</h3></div>";
+
+
+            
+            $consulta_tour="SELECT * FROM reserva_tour WHERE (ID_reserva = $id_habitacion)";
+            $resultado_tour=mysqli_query($enlace, $consulta_tour);
+            $precio_total_tour = 0;
+
+            if ($resultado_tour){
+                while ($fila_tour = mysqli_fetch_array($resultado_tour)){
+                $precio_total_tour += $fila_tour["precio"];
+            
+                }
+                echo"<div class='respuesta'><h3><br>Precio por los tours: ".$precio_total_tour."</h3></div>";
+            }
+            $precio_total = $pago_habitaciones + $precio_total_tour;
+            echo"<div class='respuesta'><h3><br>Precio total por pagar (Id: ".$id_habitacion."): ".$precio_total."</h3></div>";
+
+            
+            
+
+            /* 
             if ($resultado){
                 while ($fila = mysqli_fetch_array($resultado)){
                     $fecha_inicio = $fila['f_chek_in']

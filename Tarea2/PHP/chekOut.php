@@ -47,24 +47,28 @@
                 </form>
     </div>
     <?php
+
     // Fechas de ejemplo
     $fechaInicio = '2024-04-15';
     $fechaFin = '2024-05-13';
 
-    // Convierte las fechas en objetos DateTime
-    $fechaInicioObj = new DateTime($fechaInicio);
-    $fechaFinObj = new DateTime($fechaFin);
+    $timestamp_inicio = strtotime($fechaInicio);
+    $timestamp_fin = strtotime($fechaFin);
 
-    // Calcula la diferencia entre las fechas
-    $diferencia = $fechaInicioObj->diff($fechaFinObj);
+    // Calcular la diferencia en segundos
+    $diferencia_segundos = $timestamp_fin - $timestamp_inicio;
 
-    // Obtiene la diferencia en días
-    $diasDiferencia = $diferencia->days;
+    // Convertir la diferencia de segundos a días (1 día = 86400 segundos)
+    $diferencia_dias = $diferencia_segundos / (60 * 60 * 24);
 
-    // Imprime el resultado dentro de un párrafo HTML
-    echo "<p>La diferencia entre $fechaInicio y $fechaFin es de $diasDiferencia días.</p>";
-    if(isset($_GET["Calcular"])){
-        diff_dias($enlace);
+    // Redondear el resultado si es necesario
+    $diferencia_dias = round($diferencia_dias);
+
+    // Imprimir la diferencia en días
+    //echo "La diferencia entre las fechas es de $diferencia_dias días.";
+
+    if(isset($_POST["Calcular"])){
+        calculo_check_out($enlace);
 
     }
     ?>

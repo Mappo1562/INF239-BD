@@ -64,8 +64,7 @@
             
             // Redondear el resultado si es necesario
             $diferencia_dias = round($diferencia_dias);
-            echo"<div class='respuesta'><h3><br>La diferencia de dias es: ".$diferencia_dias."</h3></div>";
-
+            
             $num_habitacion = $fila_reserva['numero_habitacion'];
 
             $consulta_habitaciones="SELECT * FROM habitacion WHERE (numero_habitacion = $num_habitacion)";
@@ -91,27 +90,6 @@
             $precio_total = $pago_habitaciones + $precio_total_tour;
             echo"<div class='respuesta'><h3><br>Precio total por pagar (Id: ".$id_habitacion."): ".$precio_total."</h3></div>";
 
-            
-            
-
-            /* 
-            if ($resultado){
-                while ($fila = mysqli_fetch_array($resultado)){
-                    $fecha_inicio = $fila['f_chek_in']
-                    // Convierte las fechas en objetos DateTime
-                    $fecha_inicio_date= new DateTime($fecha_inicio);
-                    $fecha_salida_date = new DateTime($fecha_salida);
-
-                    // Calcula la diferencia entre las fechas
-                    $cant_dias = $fecha_inicio_date->diff($fecha_salida_date);
-
-                    // Obtiene la diferencia en días
-                    $diasDiferencia = $cant_dias->days;
-                    if(mysqli_query($enlace, $sql)){
-                        echo "<p>La diferencia entre $fecha_inicio y $fecha_salida es de $diasDiferencia días.</p>";
-                    }
-                }
-            }*/
         }
     }
 
@@ -277,7 +255,7 @@
                 }else{
                     $promedio = $suma_calificaciones[$cont]/$cant_calificaciones[$cont];
                 }
-                
+                $promedio = round( $promedio,0);
                 echo'<div class="tour"><h2 class="title">Habitacion numero: '.$numero_habitacion.'</h2><div class="valores">';
                 if ($numero_habitacion=="1")
                     echo '<img src="../static/habitacion_fea.png" class="img-normalizada">';

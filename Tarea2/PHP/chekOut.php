@@ -48,25 +48,6 @@
     </div>
     <?php
 
-    // Fechas de ejemplo
-    $fechaInicio = '2024-04-15';
-    $fechaFin = '2024-05-13';
-
-    $timestamp_inicio = strtotime($fechaInicio);
-    $timestamp_fin = strtotime($fechaFin);
-
-    // Calcular la diferencia en segundos
-    $diferencia_segundos = $timestamp_fin - $timestamp_inicio;
-
-    // Convertir la diferencia de segundos a días (1 día = 86400 segundos)
-    $diferencia_dias = $diferencia_segundos / (60 * 60 * 24);
-
-    // Redondear el resultado si es necesario
-    $diferencia_dias = round($diferencia_dias);
-
-    // Imprimir la diferencia en días
-    //echo "La diferencia entre las fechas es de $diferencia_dias días.";
-
     if(isset($_POST["Calcular"])){
         calculo_check_out($enlace);
 

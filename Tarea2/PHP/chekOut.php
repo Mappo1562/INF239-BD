@@ -9,6 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chek Out</title>
     <link rel="stylesheet" href="../css/bar.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../css/style.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../css/style2.css" type="text/css" media="all">
 </head>
 <body>
     <ul id="barra">

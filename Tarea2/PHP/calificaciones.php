@@ -10,46 +10,7 @@
     <title>calificaciones</title>
     <link rel="stylesheet" href="../css/bar.css" type="text/css" media="all">
     <link rel="stylesheet" href="../css/style.css" type="text/css" media="all">
-    <style>
-        .contenedor{
-            background-color: #e4b17d;
-            padding: 0px 50px 50px 50px;
-            margin: 50px 100px;
-            border-radius: 20px;
-            border: 2px dotted;
-        }
 
-        .img-normalizada{
-            width: 50%;
-            height: 50%;
-            object-fit: cover;
-        }
-
-        .title{
-            margin-left: 20%;
-        }
-
-        .tour{
-            padding-top: 60px;
-        }
-
-        .valores{
-            display: flex;
-            align-items: center;
-        }
-
-        .info{
-            margin-left: 25px;
-            font-size: 25px;
-        }
-
-        .f{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%
-        }
-    </style>
 </head>
 <body>
     <ul id="barra">

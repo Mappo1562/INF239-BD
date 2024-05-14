@@ -4,7 +4,7 @@ Tarea 2: Bases de datos
 AMBIENTE DE EJECUCION Y DESARROLLO 
 --------------------------------------------------------------------
 Sistema operativo: Windows 10 Pro
-Desarollo y ejecución: PHP y Mysql 
+Desarollo y ejecución: Xampp V3.3.0 
 --------------------------------------------------------------------
 EJECUCIÓN
 --------------------------------------------------------------------

@@ -1,4 +1,11 @@
 <?php
+
+    ####
+    #
+    # init()
+    # hace el enlace con la base de datos y lo retorna
+    #
+    ####
     function init(){
     $servidor="localhost";
     $usuario="root";
@@ -8,6 +15,13 @@
     return $enlace;
     }
 
+
+    ####
+    #
+    # consultar($enlace)
+    # revisa si la habitacion ingresada por el usuario esta siendo utilizada o no
+    #
+    ####
     function consultar($enlace){
         $dia = date("d");
         $mes = date("m");
@@ -44,6 +58,14 @@
         }
     }
 
+
+
+    ####
+    #
+    # calculo_check_out($enlace)
+    # calcula el precio real, en base al precio de la habitacion por dia y los tours
+    #
+    ####
     function calculo_check_out($enlace){
         if(isset($_POST["Calcular"])){
             $id_habitacion = $_POST['Id'];
@@ -93,6 +115,14 @@
         }
     }
 
+
+
+    ####
+    #
+    # crear($enlace)
+    # crea un registro en la tabla reservas
+    #
+    ####
     function crear($enlace){
         if(isset($_POST["aceptar"])){
             $rut_huesped=$_POST["rut"];
@@ -101,7 +131,6 @@
             $f2=$_POST["chek_out"];
 
             $insert = "INSERT INTO reserva VALUES ('','$rut_huesped','$numero_habitacion','$f1','$f2','')";
-            #$insert = "INSERT INTO **nombre tabla** VALUES (**valores de la tabla separados por , los vacios van '')";
 
             if(mysqli_query($enlace,$insert)){
                 $id_insertado = mysqli_insert_id($enlace);
@@ -113,6 +142,14 @@
         }
     }
 
+
+
+    ####
+    #
+    # buscar($id,$enlace)
+    # busca si el $id ingresado pertenece o no a la tabla reserva
+    #
+    ####
     function buscar($id,$enlace){
         if(isset($_POST["buscar"])){
             $consulta="SELECT rut_huesped, numero_habitacion, f_chek_in, f_chek_out FROM reserva WHERE ID_Reserva = '$id'";
@@ -126,6 +163,15 @@
             }
         }
     }
+
+
+
+    ####
+    #
+    # modificar($id,$enlace)
+    # cambia los valores de la reserva $id
+    #
+    ####
     function modificar($id,$enlace){
         if(isset($_POST["modificar_registro"])){
             $rut_huesped = $_POST["rut"];
@@ -144,6 +190,13 @@
     }
 
 
+
+    ####
+    #
+    # calificar($enlace)
+    # ingresa una calificacion a la tabla reserva
+    #
+    ####
     function calificar($enlace){
         if(isset($_POST["calificar"])){
             $id = $_POST["id_a_modificar"];
@@ -156,9 +209,16 @@
                 echo "<div class='respuesta'><h3>Error al ingresar calificacion.</h3></div>";
             } 
         }
-
     }
 
+
+
+    ####
+    #
+    # eliminar($enlace)
+    # elimina una reserva
+    #
+    ####
     function eliminar($enlace){
         if(isset($_POST["borrar"])){
             $id = $_POST["id_a_borrar"];
@@ -172,6 +232,14 @@
         }
     }
 
+
+
+    ####
+    #
+    # ver_tours($enlace)
+    # muestra los tours con sus datos
+    #
+    ####
     function ver_tours($enlace){
         $consulta="SELECT * FROM tour";
         $resultado=mysqli_query($enlace,$consulta);
@@ -193,6 +261,14 @@
         }
     }
 
+
+
+    ####
+    #
+    # reservar_tour($enlace)
+    # reserva un tour
+    #
+    ####
     function reservar_tour($enlace){
         if(isset($_POST["reservar"])){
             $f1=$_POST["numero_reserva"];
@@ -217,6 +293,14 @@
         }
     }
 
+
+
+    ####
+    #
+    # eliminar_tour($enlace)
+    # elimina una reserva de un tour (elimina en reserva_tour)
+    #
+    ####
     function eliminar_tour($enlace){
         if(isset($_POST["eliminar"])){
             $f1=$_POST["numero_reserva"];
@@ -231,6 +315,14 @@
         }
     }
 
+
+
+    ####
+    #
+    # calcular_promedio($enlace)
+    # calcula el promedio de las calificaciones de las habitaciones y los muestra
+    #
+    ####
     function calcular_promedio($enlace){
         $consulta_reserva="SELECT * FROM reserva";
         $resultado_reserva=mysqli_query($enlace,$consulta_reserva);
@@ -270,5 +362,3 @@
             
         }
     }
-
-?>

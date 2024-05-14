@@ -255,7 +255,7 @@
                 }else{
                     $promedio = $suma_calificaciones[$cont]/$cant_calificaciones[$cont];
                 }
-                $promedio = round( $promedio,0);
+                $promedio = round( $promedio,1);
                 echo'<div class="tour"><h2 class="title">Habitacion numero: '.$numero_habitacion.'</h2><div class="valores">';
                 if ($numero_habitacion=="1")
                     echo '<img src="../static/habitacion_fea.png" class="img-normalizada">';

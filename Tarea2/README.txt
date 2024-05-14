@@ -5,6 +5,7 @@ AMBIENTE DE EJECUCION Y DESARROLLO
 --------------------------------------------------------------------
 Sistema operativo: Windows 10 Pro
 Desarollo y ejecución: Xampp V3.3.0 
+
 --------------------------------------------------------------------
 EJECUCIÓN
 --------------------------------------------------------------------
@@ -16,12 +17,14 @@ link: http://localhost/INF239-BD/Tarea2/. Este link
 lo llevara a la pagina. Para visualizar la base de datos, debe copiar
 el siguiente link: http://localhost/phpmyadmin/. Ahora deberia poder
 manejarse por la pagina sin problema.
+
 --------------------------------------------------------------------
 CONSIDERACIONES AL MOMENTO DE EJECUTAR
 --------------------------------------------------------------------
 Es necesario descargar la base de datos llamada tarea_2.sql, que esta en
 la carpeta "database". Esto para importarla en una nueva base de datos
 que se deberia llamar tarea_2 y obtener la base de datos.
+
 --------------------------------------------------------------------
 NOMBRE Y ROL INTEGRANTES
 --------------------------------------------------------------------

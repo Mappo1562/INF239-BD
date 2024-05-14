@@ -40,7 +40,7 @@
     <div class='formulario'>
 
                 <form action='#' name='Tarea_2' method='post'>
-                <p>Ingrese su fecha de salida y Id de reserva</p>
+                <p>Ingrese su fecha de salida e Id de reserva</p>
                 <input type='date' name='chek_out' placeholder='chek out' class='dato'><br>
                 <input type='number' name='Id' placeholder='Id reserva' class='dato'><br>
                 <input type='submit' name='Calcular' placeholder='Calcular' value='Calcular'>

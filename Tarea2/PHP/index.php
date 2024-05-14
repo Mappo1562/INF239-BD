@@ -8,38 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menú</title>
     <link rel="stylesheet" href="../css/bar.css" type="text/css" media="all">
-    <style>
-.formulario{
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-background-color: #e4b17d;
-padding: 90px 50px;
-border-radius: 5px;
-text-align: center;
-border: 1px solid rgb(49, 49, 49);
-}
-
-input {
-	width: calc(100% - 20px);
-	padding: 9px;
-	margin: auto;
-	margin-top: 12px;
-	font-size: 16px;
-    border: none;
-}
-
-input[type='submit']{
-	background-color: #e06f72;
-	color: #fff;
-	width: calc(80% - 20px);
-	margin: 0 10%;
-	margin-top: 22px;
-    border: 1px solid rgb(49, 49, 49);
-    cursor: pointer;
-}
-    </style>
+    <link rel="stylesheet" href="../css/campfire.css" type="text/css" media="all">
 </head>
 <body>
     <ul id="barra">
@@ -65,7 +34,148 @@ input[type='submit']{
             </svg></div><span>calificaciones</span></a></li>
         </div>
     </ul>
-
-    <h1>HOLA MUNDO!!!!!!!!!!!!</h1>
+    <div class="stage">
+        <div class="campfire">
+          <div class="sparks">
+            <div class="spark"></div>
+            <div class="spark"></div>
+            <div class="spark"></div>
+            <div class="spark"></div>
+            <div class="spark"></div>
+            <div class="spark"></div>
+            <div class="spark"></div>
+            <div class="spark"></div>
+          </div>
+          <div class="logs">
+            <div class="log">
+              <div class="streak"></div>
+              <div class="streak"></div>
+              <div class="streak"></div>
+              <div class="streak"></div>
+              <div class="streak"></div>
+              <div class="streak"></div>
+              <div class="streak"></div>
+              <div class="streak"></div>
+              <div class="streak"></div>
+              <div class="streak"></div>
+            </div>
+            <div class="log">
+              <div class="streak"></div>
+              <div class="streak"></div>
+              <div class="streak"></div>
+              <div class="streak"></div>
+              <div class="streak"></div>
+              <div class="streak"></div>
+              <div class="streak"></div>
+              <div class="streak"></div>
+              <div class="streak"></div>
+              <div class="streak"></div>
+            </div>
+            <div class="log">
+              <div class="streak"></div>
+              <div class="streak"></div>
+              <div class="streak"></div>
+              <div class="streak"></div>
+              <div class="streak"></div>
+              <div class="streak"></div>
+              <div class="streak"></div>
+              <div class="streak"></div>
+              <div class="streak"></div>
+              <div class="streak"></div>
+            </div>
+            <div class="log">
+              <div class="streak"></div>
+              <div class="streak"></div>
+              <div class="streak"></div>
+              <div class="streak"></div>
+              <div class="streak"></div>
+              <div class="streak"></div>
+              <div class="streak"></div>
+              <div class="streak"></div>
+              <div class="streak"></div>
+              <div class="streak"></div>
+            </div>
+            <div class="log">
+              <div class="streak"></div>
+              <div class="streak"></div>
+              <div class="streak"></div>
+              <div class="streak"></div>
+              <div class="streak"></div>
+              <div class="streak"></div>
+              <div class="streak"></div>
+              <div class="streak"></div>
+              <div class="streak"></div>
+              <div class="streak"></div>
+            </div>
+            <div class="log">
+              <div class="streak"></div>
+              <div class="streak"></div>
+              <div class="streak"></div>
+              <div class="streak"></div>
+              <div class="streak"></div>
+              <div class="streak"></div>
+              <div class="streak"></div>
+              <div class="streak"></div>
+              <div class="streak"></div>
+              <div class="streak"></div>
+            </div>
+            <div class="log">
+              <div class="streak"></div>
+              <div class="streak"></div>
+              <div class="streak"></div>
+              <div class="streak"></div>
+              <div class="streak"></div>
+              <div class="streak"></div>
+              <div class="streak"></div>
+              <div class="streak"></div>
+              <div class="streak"></div>
+              <div class="streak"></div>
+            </div>
+          </div>
+          <div class="sticks">
+            <div class="stick"></div>
+            <div class="stick"></div>
+            <div class="stick"></div>
+            <div class="stick"></div>
+          </div>
+          <div class="fire">
+            <div class="fire__red">
+              <div class="flame"></div>
+              <div class="flame"></div>
+              <div class="flame"></div>
+              <div class="flame"></div>
+              <div class="flame"></div>
+              <div class="flame"></div>
+              <div class="flame"></div>
+            </div>
+            <div class="fire__orange">
+              <div class="flame"></div>
+              <div class="flame"></div>
+              <div class="flame"></div>
+              <div class="flame"></div>
+              <div class="flame"></div>
+              <div class="flame"></div>
+              <div class="flame"></div>
+            </div>
+            <div class="fire__yellow">
+              <div class="flame"></div>
+              <div class="flame"></div>
+              <div class="flame"></div>
+              <div class="flame"></div>
+              <div class="flame"></div>
+            </div>
+            <div class="fire__white">
+              <div class="flame"></div>
+              <div class="flame"></div>
+              <div class="flame"></div>
+              <div class="flame"></div>
+              <div class="flame"></div>
+              <div class="flame"></div>
+              <div class="flame"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
 </body>
 </html>

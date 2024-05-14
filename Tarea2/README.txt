@@ -31,5 +31,5 @@ NOMBRE Y ROL INTEGRANTES
 Alejandro Vergara Araneda
 202273568-6
 
-Martin Ibañez
+Martin Ibañez Gonzalez
 202273597-k

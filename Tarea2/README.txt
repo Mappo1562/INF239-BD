@@ -11,7 +11,7 @@ EJECUCIÓN
 Para el correcto funcionamiento del programa es necesario tener 
 instalado "xampp". Luego seleccionar el modulo "apache" y "mysql".
 Con ese paso cubierto, ahora debe copiar en su buscador el siguiente
-link: http://localhost/(direccion donde tiene guardado). Este link 
+link: http://localhost/INF239-BD/Tarea2/. Este link 
 lo llevara a la pagina. Para visualizar la base de datos, debe copiar
 el siguiente link: http://localhost/phpmyadmin/. Ahora deberia poder
 manejarse por la pagina sin problema.
